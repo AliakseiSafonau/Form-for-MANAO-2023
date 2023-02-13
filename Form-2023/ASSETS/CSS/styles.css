@@ -1,0 +1,208 @@
+@font-face {
+    font-family: "ManropeMedium";
+    src: url("/ASSETS/FONTS/Manrope-Medium.ttf") format("truetype");
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "ManropeMedium";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sign {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #03a9f4;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+  
+.sign.active {
+    background-color: #f43648;
+}
+  
+.sign .container_sign {
+    width: 800px;
+    height: 500px;
+    padding: 40px 0;
+    position: relative;
+}
+  
+.sign .container_sign .block {
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow: 0 5px 45px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 45px rgba(0, 0, 0, 0.2);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+  
+.sign .block__item {
+    width: 50%;
+}
+  
+.sign .block-item {
+    text-align: center;
+}
+  
+.sign .block-item__title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 10px;
+}
+  
+.sign .block-item__btn {
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+  
+.sign .form-box {
+    background-color: #fff;
+    height: 100%;
+    width: 50%;
+    -webkit-box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow: hidden;
+}
+  
+.sign .form-box .form {
+    width: 100%;
+    padding: 50px;
+    font-size: 16px;
+    position: absolute;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+  
+.sign .form-box .form_signin {
+    left: 0;
+    -webkit-transition-delay: 0.25s;
+            transition-delay: 0.25s;
+}
+  
+.sign .form-box .form_signup {
+    left: 100%;
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+}
+  
+.sign .form-box .form__title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+}
+  
+.sign .form-box .form__input {
+    width: 100%;
+    padding: 10px;
+    border: solid 1px #333;
+    font-size: inherit;
+}
+  
+.sign .form-box .form__btn {
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    background-color: #03a9f4;
+    color: #fff;
+    padding: 10px 50px;
+}
+  
+.sign .form-box .form__forgot {
+    color: #333;
+}
+  
+.sign .form-box .form__btn_signup {
+    background-color: #f43648;
+}
+  
+.sign .form-box.active {
+    left: 50%;
+}
+  
+.sign .form-box.active .form_signin {
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+    left: -100%;
+}
+  
+.sign .form-box.active .form_signup {
+    -webkit-transition-delay: 0.25s;
+            transition-delay: 0.25s;
+    left: 0;
+}
+
+@media (max-width: 992px) {
+    .container_sign {
+      max-width: 400px;
+      min-height: 650px;
+      padding: 0;
+      margin: 0 20px;
+    }
+    .container_sign .block {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+    }
+    .container_sign .block .block-item {
+      width: 100%;
+      padding: 10px 0;
+    }
+    .container_sign .form-box {
+      width: 100%;
+      height: 500px;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      top: 0;
+    }
+    .container_sign .form-box.active {
+      top: 150px;
+      left: 0;
+    }
+}
