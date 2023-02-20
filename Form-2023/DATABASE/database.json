@@ -1,0 +1,20 @@
+[
+    {
+        "login": "login",
+        "password": "password",
+        "name": "name",
+        "email": "email@email.email"
+    },
+    {
+        "login": "login1",
+        "password": "password1",
+        "name": "name1",
+        "email": "email1@email.email"
+    },
+    {
+        "login": "AliakseiSafonau",
+        "email": "pharmaceftssma@gmail.com",
+        "password": "asusk50in",
+        "name": "Maverick "
+    }
+]
