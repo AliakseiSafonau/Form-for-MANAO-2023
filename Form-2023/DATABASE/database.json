@@ -12,9 +12,17 @@
         "email": "email1@email.email"
     },
     {
+        "login": "qwerty",
+        "email": "pharmaceftssmau@gmail.com",
+        "password": "qwertyui",
+        "confirm_password": "qwertyui",
+        "name": "Maverick"
+    },
+    {
         "login": "AliakseiSafonau",
         "email": "pharmaceftssma@gmail.com",
-        "password": "asusk50in",
-        "name": "Maverick "
+        "password": "qwertyu",
+        "confirm_password": "qwertyu",
+        "name": "Maverick"
     }
 ]

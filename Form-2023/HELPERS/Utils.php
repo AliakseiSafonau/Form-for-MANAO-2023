@@ -3,14 +3,17 @@
 namespace Helpers;
 
 class Utils {
-    public function getCookie() {
-        $result = 0;
-        if (isset($_COOKIE["PHPSESSID"]))  $result = $_COOKIE["PHPSESSID"];
+    public function getCookie($data) {
+        $result = 'not';
+        if (isset($_COOKIE[$data]))  $result = $_COOKIE[$data];
         return $result;
     }
 
     public function setCookie($data) {
-        if (isset($_COOKIE["PHPSESSID"]))  $result = $_COOKIE["PHPSESSID"];
-        return $result;
+        setcookie($data['name'], $data['title']);
+    }
+
+    public function cleanCookie($data) {
+        unset($_COOKIE[$data]);
     }
 }

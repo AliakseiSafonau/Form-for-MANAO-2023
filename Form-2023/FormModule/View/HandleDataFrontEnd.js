@@ -53,13 +53,25 @@ class HandleDataFrontEnd {
                 };
                 
                 this.jsFormController.dataCollect(data).then(failed => {
-                    /*if (failed) {
-                        let div = document.createElement('div');
-                        div.innerText = `На эту почту аккаунт уже зарегистрирован!`;
-                        div.className = 'alert';
-                        const error = document.getElementsByClassName('form_signup')[0];
-                        error.append(div);
-                    } else {}*/
+                    if (failed['result']){
+                        if (failed['result'] === 'ok') {
+                        window.location.href = 'http://localhost/startpage.php';
+                    } else if (failed['result'] === '-1') {
+                        document.getElementsByClassName('form_signup-confirm_password form__error')[0].classList.toggle('active');
+                        inputs.password.value = '';
+                        inputs.confirm_password.value = '';
+                    } 
+                    } else {
+                        if (failed['login'] === 'failure') {
+                            document.getElementsByClassName('form_signup-login form__error')[0].classList.toggle('active');
+                        }
+                        if (failed['password'] === 'failure') {
+                            document.getElementsByClassName('form_signup-password form__error')[0].classList.toggle('active');
+                        }
+                        if (failed['email'] === 'failure') {
+                            document.getElementsByClassName('form_signup-email form__error')[0].classList.toggle('active');
+                        }
+                    }
                     console.log(failed);
                 })
             }
@@ -71,9 +83,14 @@ class HandleDataFrontEnd {
                 inputs = form.getElementsByTagName('input');
 
             if (inputs.login.value.trim() && inputs.password.value.trim()) {
-                let data = { 'login': inputs.login.value.trim(), 'password': inputs.password.value.trim()};
-                console.log(data)
+                let data = { 'login': inputs.login.value.trim(), 'password': inputs.password.value.trim(), 'blu': 'blu'};
                 this.jsFormController.dataCollect(data).then(failed => {
+                    if (failed['result']){
+                        if (failed['result'] === 'ok') {
+                        window.location.href = 'http://localhost/startpage.php';
+                    } else {
+                        document.getElementsByClassName('form_signin-error form__error')[0].classList.toggle('active')
+                    }}
                     /*if (failed) {
                         let div = document.createElement('div');
                         div.innerText = `Введены неправильные имя пользователя или пароль!`;

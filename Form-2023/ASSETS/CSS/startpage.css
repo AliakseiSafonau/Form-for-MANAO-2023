@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "ManropeMedium";
+    src: url("/ASSETS/FONTS/Manrope-Medium.ttf") format("truetype");
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "ManropeMedium";
+}

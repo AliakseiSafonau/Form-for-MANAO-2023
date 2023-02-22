@@ -8,6 +8,20 @@
     font-family: "ManropeMedium";
 }
 
+h3 {
+    margin-bottom: 5px;
+}
+
+p {
+    margin: 0;
+}
+
+input {
+    background: none;
+    border: none;
+    outline: none;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -29,13 +43,10 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background-color: #03a9f4;
+    background-image: url('../IMAGES/pexels-ash-376464.jpg');
+    background-size: 100%;
     -webkit-transition: 0.5s;
     transition: 0.5s;
-}
-  
-.sign.active {
-    background-color: #f43648;
 }
   
 .sign .container_sign {
@@ -69,7 +80,7 @@ body {
 .sign .block-item__title {
     font-size: 1.2rem;
     font-weight: 500;
-    color: white;
+    color: rgb(0, 0, 0);
     margin-bottom: 10px;
 }
   
@@ -77,14 +88,14 @@ body {
     border: none;
     cursor: pointer;
     padding: 10px 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     color: #333;
     font-size: 16px;
     font-weight: 500;
 }
   
 .sign .form-box {
-    background-color: #fff;
+    background-color: #ffffff;
     height: 100%;
     width: 50%;
     -webkit-box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
@@ -133,12 +144,26 @@ body {
   
 .sign .form-box .form__input {
     width: 100%;
-    padding: 10px;
-    border: solid 1px #333;
+    padding: 5px;
+    margin-bottom: 5px;
     font-size: inherit;
+    box-shadow: 4px 4px 0px -100px rgba(34, 60, 80, 0.2) inset;
+    border-radius: 1px;
 }
+
+.sign .form-box .form__input:hover {
+    border-radius: 10px;
+    box-shadow: 0px 0px 55px -25px rgba(0, 98, 255, 0.35) inset;
+}
+
+.sign .form-box .form__input:focus {
+    border-radius: 10px;
+    box-shadow: 0px 0px 55px -25px rgba(0, 98, 255, 0.35) inset;
+}
+
   
 .sign .form-box .form__btn {
+    margin-top: 10px;
     border: none;
     cursor: pointer;
     font-size: inherit;
@@ -169,6 +194,19 @@ body {
     -webkit-transition-delay: 0.25s;
             transition-delay: 0.25s;
     left: 0;
+}
+
+.form__error {
+    font-size: 12px;
+    height: 18px;
+    visibility: hidden;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #f43648;
+}
+
+.form__error.active {
+    visibility: visible;
 }
 
 @media (max-width: 992px) {

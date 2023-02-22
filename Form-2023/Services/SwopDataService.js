@@ -1,13 +1,20 @@
 class SwopDataService{
 
     async sendData(data) {
-        console.log(data);
-        let response = await fetch('http://localhost/answer.php', {
+        
+        let response = await fetch('http://localhost/index.php', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
             body: JSON.stringify(data)
+        });
+        
+        return await response.json();
+    }
+
+    async getData() {
+        
+        let response = await fetch('http://localhost/startpage.php', {
+            method: 'POST',
+            body:JSON.stringify({'data': 'help'})
         });
         
         return await response.json();
