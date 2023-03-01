@@ -31,9 +31,10 @@ class HandleDataFrontEnd {
 
     dataHandle(event) {
         event.preventDefault();
-        //const utils = new AddUtils;
 
         let target = event.target;
+
+        this.cleanForm();
 
         if (target.className === 'form__btn form__btn_signup') {
             let form = document.querySelector('[name="form_signup"]'),
@@ -72,10 +73,10 @@ class HandleDataFrontEnd {
                             document.getElementsByClassName('form_signup-email form__error')[0].classList.toggle('active');
                         }
                     }
-                    console.log(failed);
                 })
+            } else {
+                document.getElementsByClassName('form_signup-btn form__error')[0].classList.toggle('active');
             }
-
         } 
         
         if (target.className === 'form__btn form__btn_signin'){
@@ -91,15 +92,18 @@ class HandleDataFrontEnd {
                     } else {
                         document.getElementsByClassName('form_signin-error form__error')[0].classList.toggle('active')
                     }}
-                    /*if (failed) {
-                        let div = document.createElement('div');
-                        div.innerText = `Введены неправильные имя пользователя или пароль!`;
-                        div.className = 'alert';
-                        const error = document.getElementsByClassName('form_signin')[0];
-                        error.append(div);
-                    }*/
-                    console.log(failed);
                 })
+            } else {
+                document.getElementsByClassName('form_signin-btn form__error')[0].classList.toggle('active');
+            }
+        }
+    }
+
+    cleanForm() {
+        const formTitles = ['up-login', 'up-password', 'up-email', 'up-confirm_password', 'in-error', 'up-btn', 'in-btn'];
+        for (let i = 0; i < 5; i++) {
+            if (document.getElementsByClassName(`form_sign${formTitles[i]} form__error active`)[0]) {
+                document.getElementsByClassName(`form_sign${formTitles[i]} form__error active`)[0].classList.toggle('active');
             }
         }
     }

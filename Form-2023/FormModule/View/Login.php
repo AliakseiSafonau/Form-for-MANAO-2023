@@ -4,14 +4,15 @@
     <p>
         <input type="text" class="form__input" name="login" placeholder="<?php
             echo $this -> controller -> model -> login
-        ?>">
+        ?>" required> 
     </p>
     <p class="form__error"></p>
     <p>
         <input type="password" class="form__input" name="password" placeholder="<?php
             echo $this -> controller -> model -> password
-        ?>">
+        ?>" required>
     </p>
+    <p class="form_signin-btn form__error">All fields must be filled</p>
     <p>
         <button type="submit" class="form__btn form__btn_signin">
             <?php 

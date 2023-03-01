@@ -5,7 +5,7 @@
     class DataBaseHandle {
         
         public function getData() {
-            $json = file_get_contents('DataBase/database.json');
+            $json = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/DataBase/database.json');
             $outData = json_decode($json, true);
             return $outData;
         }
@@ -15,7 +15,7 @@
             $result = ['login' => '', 'email' => '', 'user' => ''];
             foreach ($currdata as &$value) {
                 foreach ($value as $key2 => $value2) {
-                    if (array_key_exists('email', $data)) {
+                    if (array_key_exists('name', $data)) {
                         if ( $key2 === 'email' && $value2 === $data['email']) {
                             $result['email'] = 'failed';
                         }
@@ -24,7 +24,8 @@
                         }
                     } else {
                         if ($key2 === 'login' && $value2 === $data['login']) {
-                            if ($value['password'] === $data['password']) {
+                            $hashed_password = md5($data['password'].'qviply');
+                            if ($value['password'] === $hashed_password) {
                                 $result['login'] = 'ok';
                                 $result['user'] = $value;
                             }
@@ -38,7 +39,7 @@
         public function createDB($data) {
             $currdata = $this->getData();
             $currdata[] = $data;
-            file_put_contents('DataBase/database.json', json_encode($currdata, JSON_PRETTY_PRINT));
+            file_put_contents($_SERVER['DOCUMENT_ROOT'].'/DataBase/database.json', json_encode($currdata, JSON_PRETTY_PRINT));
         }
 
         public function updateDB($data) {
@@ -52,12 +53,12 @@
                     }
                 };
             }
-            file_put_contents('DataBase/database.json', json_encode($currdata, JSON_PRETTY_PRINT));
+            file_put_contents($_SERVER['DOCUMENT_ROOT'].'/DataBase/database.json', json_encode($currdata, JSON_PRETTY_PRINT));
         }
         public function deleteDB($data) {
             $currdata = $this->getData();
             $currdata[] = $data;
-            file_put_contents('DataBase/database.json', json_encode($currdata, JSON_PRETTY_PRINT));
+            file_put_contents($_SERVER['DOCUMENT_ROOT'].'/DataBase/database.json', json_encode($currdata, JSON_PRETTY_PRINT));
         }
     }
 ?>

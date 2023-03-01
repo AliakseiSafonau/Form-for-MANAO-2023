@@ -1,11 +1,12 @@
 <?php
-    require_once './Helpers/autoload.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/Helpers/autoload.php';
 
     $utils = new Helpers\Utils;
     
     $formModel = new FormModule\Model\FormModel;
     $phpFormController = new FormModule\Controller\PHPFormController($formModel);
     $formView = new FormModule\View\FormView($phpFormController);
+
     if (isset($_POST) && ('POST' == $_SERVER['REQUEST_METHOD'])) {
         $data = json_decode(file_get_contents('php://input'), true);
         $output_data = $phpFormController -> validateForm($data);

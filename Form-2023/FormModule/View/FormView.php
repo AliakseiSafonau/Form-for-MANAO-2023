@@ -7,7 +7,7 @@ final class FormView {
         $this -> controller = $controller;
       }
     public function render() {
-        require './FormModule/View/Titles.php';
+        require $_SERVER['DOCUMENT_ROOT'].'/FormModule/View/Titles.php';
     }
 }
 ?>

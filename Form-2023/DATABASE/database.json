@@ -1,28 +1,8 @@
 [
     {
-        "login": "login",
-        "password": "password",
-        "name": "name",
-        "email": "email@email.email"
-    },
-    {
-        "login": "login1",
-        "password": "password1",
-        "name": "name1",
-        "email": "email1@email.email"
-    },
-    {
-        "login": "qwerty",
-        "email": "pharmaceftssmau@gmail.com",
-        "password": "qwertyui",
-        "confirm_password": "qwertyui",
-        "name": "Maverick"
-    },
-    {
         "login": "AliakseiSafonau",
+        "password": "41f6bd7798f80ac4c54cf69818ce0bd9",
         "email": "pharmaceftssma@gmail.com",
-        "password": "qwertyu",
-        "confirm_password": "qwertyu",
-        "name": "Maverick"
+        "name": "Alpaga"
     }
 ]
