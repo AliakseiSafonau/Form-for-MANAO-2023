@@ -101,7 +101,7 @@ class HandleDataFrontEnd {
 
     cleanForm() {
         const formTitles = ['up-login', 'up-password', 'up-email', 'up-confirm_password', 'in-error', 'up-btn', 'in-btn'];
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 7; i++) {
             if (document.getElementsByClassName(`form_sign${formTitles[i]} form__error active`)[0]) {
                 document.getElementsByClassName(`form_sign${formTitles[i]} form__error active`)[0].classList.toggle('active');
             }
