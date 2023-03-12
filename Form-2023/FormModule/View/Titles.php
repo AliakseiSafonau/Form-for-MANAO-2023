@@ -30,8 +30,8 @@
         </div>
         <div class="form-box">
             <?php
-                require $_SERVER['DOCUMENT_ROOT'].'/FormModule/View/Login.php';
-                require $_SERVER['DOCUMENT_ROOT'].'/FormModule/View/Registration.php';
+                require $_SERVER['DOCUMENT_ROOT'].'/FormModule/View/login.php';
+                require $_SERVER['DOCUMENT_ROOT'].'/FormModule/View/registration.php';
             ?>
 <script type="module" src="app.js"></script>
 </body>

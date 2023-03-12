@@ -1,6 +1,6 @@
 @font-face {
     font-family: "ManropeMedium";
-    src: url("/ASSETS/FONTS/Manrope-Medium.ttf") format("truetype");
+    src: url("/Assets/Fonts/Manrope-Medium.ttf") format("truetype");
 }
 
 * {
@@ -43,7 +43,7 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background-image: url('../IMAGES/pexels-ash-376464.jpg');
+    background-color: rgb(65, 193, 216);
     background-size: 100%;
     -webkit-transition: 0.5s;
     transition: 0.5s;

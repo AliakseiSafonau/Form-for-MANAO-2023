@@ -4,7 +4,7 @@ document.getElementsByClassName('cleanCookie')[0].addEventListener('click', func
     const swopDataService = new SwopDataService();
     swopDataService.getData().then(data => {
         if (data['result'] === 'exit') {
-            window.location.href = 'http://localhost/index.php';
+            window.location = '/';
         };
     })
 })

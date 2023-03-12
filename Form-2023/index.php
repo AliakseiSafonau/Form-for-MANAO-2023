@@ -1,5 +1,6 @@
 <?php
-    require_once $_SERVER['DOCUMENT_ROOT'].'/Helpers/autoload.php';
+
+    require_once $_SERVER['DOCUMENT_ROOT'].'/autoload.php';
 
     $utils = new Helpers\Utils;
     
@@ -13,8 +14,8 @@
         echo json_encode($output_data);
     } else {
         if (isset($_COOKIE['PHPSESSID'])) {
-            header('Location: http://localhost/startpage.php');
-            exit;
+            header('Location: /startpage.php');
+            exit();
         } else {
             $formView -> render();
         }

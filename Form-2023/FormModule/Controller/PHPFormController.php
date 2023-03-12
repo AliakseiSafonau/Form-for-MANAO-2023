@@ -31,10 +31,22 @@ class PHPFormController {
           $ajaxData['login'] = 'failure';
           $result++;
         };
-        preg_match('/([a-zA-Zа-яА-ЯёЁ]{1,}((\d+)|[a-zA-Zа-яА-ЯёЁ]+){1,})[a-zA-Zа-яА-ЯёЁ\d]{4,}/', $data['password'], $matches, PREG_OFFSET_CAPTURE);
+        preg_match('/^[\w]{6,}$/', $data['password'], $matches, PREG_OFFSET_CAPTURE);
         if(empty($matches)) {
           $ajaxData['password'] = 'failure';
           $result++;
+        } else {
+          preg_match('/[0-9]{1,}/', $data['password'], $matches, PREG_OFFSET_CAPTURE);
+          if(empty($matches)) {
+            $ajaxData['password'] = 'failure';
+            $result++;
+          } else {
+            preg_match('/[a-z,A-Z]{1,}/', $data['password'], $matches, PREG_OFFSET_CAPTURE);
+            if(empty($matches)) {
+              $ajaxData['password'] = 'failure';
+              $result++;
+            };
+          };
         };
         preg_match('/^[a-zA-Z0-9_]{2,}/',  $data['name'], $matches, PREG_OFFSET_CAPTURE);
         if(empty($matches)) {

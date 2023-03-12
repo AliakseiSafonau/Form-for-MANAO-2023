@@ -2,7 +2,7 @@ class SwopDataService{
 
     async sendData(data) {
         
-        let response = await fetch('http://localhost/index.php', {
+        let response = await fetch('index.php', {
             method: 'POST',
             body: JSON.stringify(data)
         });
@@ -12,7 +12,7 @@ class SwopDataService{
 
     async getData() {
         
-        let response = await fetch('http://localhost/startpage.php', {
+        let response = await fetch('startpage.php', {
             method: 'POST',
             body:JSON.stringify({'data': 'help'})
         });

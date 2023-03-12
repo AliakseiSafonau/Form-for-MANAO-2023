@@ -5,7 +5,7 @@
     class DataBaseHandle {
         
         public function getData() {
-            $json = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/DataBase/database.json');
+            $json = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/database.json');
             $outData = json_decode($json, true);
             return $outData;
         }
@@ -39,7 +39,7 @@
         public function createDB($data) {
             $currdata = $this->getData();
             $currdata[] = $data;
-            file_put_contents($_SERVER['DOCUMENT_ROOT'].'/DataBase/database.json', json_encode($currdata, JSON_PRETTY_PRINT));
+            file_put_contents($_SERVER['DOCUMENT_ROOT'].'/database.json', json_encode($currdata, JSON_PRETTY_PRINT));
         }
 
         public function updateDB($data) {
@@ -53,12 +53,12 @@
                     }
                 };
             }
-            file_put_contents($_SERVER['DOCUMENT_ROOT'].'/DataBase/database.json', json_encode($currdata, JSON_PRETTY_PRINT));
+            file_put_contents($_SERVER['DOCUMENT_ROOT'].'/database.json', json_encode($currdata, JSON_PRETTY_PRINT));
         }
         public function deleteDB($data) {
             $currdata = $this->getData();
             $currdata[] = $data;
-            file_put_contents($_SERVER['DOCUMENT_ROOT'].'/DataBase/database.json', json_encode($currdata, JSON_PRETTY_PRINT));
+            file_put_contents($_SERVER['DOCUMENT_ROOT'].'/database.json', json_encode($currdata, JSON_PRETTY_PRINT));
         }
     }
 ?>
